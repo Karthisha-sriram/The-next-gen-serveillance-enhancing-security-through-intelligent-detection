@@ -1,4 +1,4 @@
-````markdown
+
 # The Next-Gen Surveillance: Enhancing Security Through Intelligent Detection
 
 ## Overview
@@ -433,22 +433,6 @@ Add the team members and their responsibilities below:
 3. Name - Role / Contribution
 4. Name - Role / Contribution
 ```
-
----
-
-## Open-Source Attribution
-
-This project uses and builds upon the open-source Human computer vision framework developed by Vladimir Mandic.
-
-Original Human project:
-
-[https://github.com/vladmandic/human](https://github.com/vladmandic/human)
-
-The Human framework provides the underlying computer vision and machine learning functionality used by this project, including face, body, hand, iris, emotion, and related analysis capabilities.
-
-This repository represents a project built using the Human framework and its associated technologies. It is not the original Human library.
-
----
 
 ## Third-Party Technologies
 
