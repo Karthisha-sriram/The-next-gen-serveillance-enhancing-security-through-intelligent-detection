@@ -1,469 +1,500 @@
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/vladmandic)
-![Git Version](https://img.shields.io/github/package-json/v/vladmandic/human?style=flat-square&svg=true&label=git)
-![NPM Version](https://img.shields.io/npm/v/@vladmandic/human.png?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/vladmandic/human?style=flat-square&svg=true)
-![License](https://img.shields.io/github/license/vladmandic/human?style=flat-square&svg=true)
-![GitHub Status Checks](https://img.shields.io/github/checks-status/vladmandic/human/main?style=flat-square&svg=true)
-
-# Human Library
-
-**AI-powered 3D Face Detection & Rotation Tracking, Face Description & Recognition,**  
-**Body Pose Tracking, 3D Hand & Finger Tracking, Iris Analysis,**  
-**Age & Gender & Emotion Prediction, Gaze Tracking, Gesture Recognition, Body Segmentation**  
-
-<br>
-
-## Highlights
-
-- Compatible with most server-side and client-side environments and frameworks  
-- Combines multiple machine learning models which can be switched on-demand depending on the use-case  
-- Related models are executed in an attention pipeline to provide details when needed  
-- Optimized input pre-processing that can enhance image quality of any type of inputs  
-- Detection of frame changes to trigger only required models for improved performance  
-- Intelligent temporal interpolation to provide smooth results regardless of processing performance  
-- Simple unified API  
-- Built-in Image, Video and WebCam handling
-
-[*Jump to Quick Start*](#quick-start)
-
-<br>
-
-## Compatibility
-
-**Browser**:  
-  - Compatible with both desktop and mobile platforms  
-  - Compatible with *WebGPU*, *WebGL*, *WASM*, *CPU* backends  
-  - Compatible with *WebWorker* execution  
-  - Compatible with *WebView*  
-  - Primary platform: *Chromium*-based browsers  
-  - Secondary platform: *Firefox*, *Safari*
-
-**NodeJS**:  
-  - Compatibile with *WASM* backend for executions on architectures where *tensorflow* binaries are not available  
-  - Compatible with *tfjs-node* using software execution via *tensorflow* shared libraries  
-  - Compatible with *tfjs-node* using GPU-accelerated execution via *tensorflow* shared libraries and nVidia CUDA  
-  - Supported versions are from **14.x** to **22.x**  
-  - NodeJS version **23.x** is not supported due to breaking changes and issues with `@tensorflow/tfjs`  
-
-<br>
-
-## Releases
-- [Release Notes](https://github.com/vladmandic/human/releases)
-- [NPM Link](https://www.npmjs.com/package/@vladmandic/human)
-## Demos
-
-*Check out [**Simple Live Demo**](https://vladmandic.github.io/human/demo/typescript/index.html) fully annotated app as a good start starting point ([html](https://github.com/vladmandic/human/blob/main/demo/typescript/index.html))([code](https://github.com/vladmandic/human/blob/main/demo/typescript/index.ts))*  
-
-*Check out [**Main Live Demo**](https://vladmandic.github.io/human/demo/index.html) app for advanced processing of of webcam, video stream or images static images with all possible tunable options*  
-
-- To start video detection, simply press *Play*  
-- To process images, simply drag & drop in your Browser window  
-- Note: For optimal performance, select only models you'd like to use
-- Note: If you have modern GPU, *WebGL* (default) backend is preferred, otherwise select *WASM* backend
-
-<br>
-
-
-- [**List of all Demo applications**](https://github.com/vladmandic/human/wiki/Demos)
-- [**Live Examples galery**](https://vladmandic.github.io/human/samples/index.html)
-
-### Browser Demos
-
-*All browser demos are self-contained without any external dependencies*
+````markdown
+# The Next-Gen Surveillance: Enhancing Security Through Intelligent Detection
 
-- **Full** [[*Live*]](https://vladmandic.github.io/human/demo/index.html) [[*Details*]](https://github.com/vladmandic/human/tree/main/demo): Main browser demo app that showcases all Human capabilities
-- **Simple** [[*Live*]](https://vladmandic.github.io/human/demo/typescript/index.html) [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/typescript): Simple demo in WebCam processing demo in TypeScript
-- **Embedded** [[*Live*]](https://vladmandic.github.io/human/demo/video/index.html) [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/video/index.html): Even simpler demo with tiny code embedded in HTML file
-- **Face Detect** [[*Live*]](https://vladmandic.github.io/human/demo/facedetect/index.html) [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/facedetect): Extract faces from images and processes details
-- **Face Match** [[*Live*]](https://vladmandic.github.io/human/demo/facematch/index.html) [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/facematch): Extract faces from images, calculates face descriptors and similarities and matches them to known database
-- **Face ID** [[*Live*]](https://vladmandic.github.io/human/demo/faceid/index.html) [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/faceid): Runs multiple checks to validate webcam input before performing face match to faces in IndexDB
-- **Multi-thread** [[*Live*]](https://vladmandic.github.io/human/demo/multithread/index.html) [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/multithread): Runs each Human module in a separate web worker for highest possible performance  
-- **NextJS** [[*Live*]](https://vladmandic.github.io/human-next/out/index.html) [[*Details*]](https://github.com/vladmandic/human-next): Use Human with TypeScript, NextJS and ReactJS
-- **ElectronJS** [[*Details*]](https://github.com/vladmandic/human-electron): Use Human with TypeScript and ElectonJS to create standalone cross-platform apps
-- **3D Analysis with BabylonJS** [[*Live*]](https://vladmandic.github.io/human-motion/src/index.html) [[*Details*]](https://github.com/vladmandic/human-motion): 3D tracking and visualization of head, face, eye, body and hand
-- **VRM Virtual Model Tracking with Three.JS** [[*Live*]](https://vladmandic.github.io/human-three-vrm/src/human-vrm.html) [[*Details*]](https://github.com/vladmandic/human-three-vrm): VR model with head, face, eye, body and hand tracking  
-- **VRM Virtual Model Tracking with BabylonJS** [[*Live*]](https://vladmandic.github.io/human-bjs-vrm/src/index.html) [[*Details*]](https://github.com/vladmandic/human-bjs-vrm): VR model with head, face, eye, body and hand tracking  
+## Overview
 
-### NodeJS Demos
+The Next-Gen Surveillance: Enhancing Security Through Intelligent Detection is an AI-based computer vision project focused on intelligent visual analysis for modern surveillance and security applications.
 
-*NodeJS demos may require extra dependencies which are used to decode inputs*  
-*See header of each demo to see its dependencies as they are not automatically installed with `Human`*
+The project uses the Human computer vision framework together with TensorFlow.js to process images, videos, and webcam input and perform human-related detection and analysis.
 
-- **Main** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/nodejs/node.js): Process images from files, folders or URLs using native methods  
-- **Canvas** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/nodejs/node-canvas.js): Process image from file or URL and draw results to a new image file using `node-canvas`  
-- **Video** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/nodejs/node-video.js): Processing of video input using `ffmpeg`  
-- **WebCam** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/nodejs/node-webcam.js): Processing of webcam screenshots using `fswebcam`  
-- **Events** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/nodejs/node-event.js): Showcases usage of `Human` eventing to get notifications on processing
-- **Similarity** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/nodejs/node-similarity.js): Compares two input images for similarity of detected faces
-- **Face Match** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/facematch/node-match.js): Parallel processing of face **match** in multiple child worker threads
-- **Multiple Workers** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/multithread/node-multiprocess.js): Runs multiple parallel `human` by dispaching them to pool of pre-created worker processes  
-- **Dynamic Load** [[*Details*]](https://github.com/vladmandic/human/tree/main/demo/nodejs): Loads Human dynamically with multiple different desired backends  
+The system provides computer vision capabilities including face detection, facial landmark analysis, emotion analysis, iris analysis, hand tracking, body pose estimation, gesture-related analysis, and other human-centric visual processing capabilities.
 
-## Project pages
+This project builds upon the open-source Human framework and uses its computer vision capabilities as the foundation for developing an intelligent surveillance-oriented application.
 
-- [**Code Repository**](https://github.com/vladmandic/human)
-- [**NPM Package**](https://www.npmjs.com/package/@vladmandic/human)
-- [**Issues Tracker**](https://github.com/vladmandic/human/issues)
-- [**TypeDoc API Specification - Main class**](https://vladmandic.github.io/human/typedoc/classes/Human.html)
-- [**TypeDoc API Specification - Full**](https://vladmandic.github.io/human/typedoc/)
-- [**Change Log**](https://github.com/vladmandic/human/blob/main/CHANGELOG.md)
-- [**Current To-do List**](https://github.com/vladmandic/human/blob/main/TODO.md)
+---
 
-## Wiki pages
+## Objectives
 
-- [**Home**](https://github.com/vladmandic/human/wiki)
-- [**Installation**](https://github.com/vladmandic/human/wiki/Install)
-- [**Usage & Functions**](https://github.com/vladmandic/human/wiki/Usage)
-- [**Configuration Details**](https://github.com/vladmandic/human/wiki/Config)
-- [**Result Details**](https://github.com/vladmandic/human/wiki/Result)
-- [**Customizing Draw Methods**](https://github.com/vladmandic/human/wiki/Draw)
-- [**Caching & Smoothing**](https://github.com/vladmandic/human/wiki/Caching)
-- [**Input Processing**](https://github.com/vladmandic/human/wiki/Image)
-- [**Face Recognition & Face Description**](https://github.com/vladmandic/human/wiki/Embedding)
-- [**Gesture Recognition**](https://github.com/vladmandic/human/wiki/Gesture)
-- [**Common Issues**](https://github.com/vladmandic/human/wiki/Issues)
-- [**Background and Benchmarks**](https://github.com/vladmandic/human/wiki/Background)
+The main objectives of this project are:
 
-## Additional notes
+- Develop an AI-assisted surveillance system using computer vision and machine learning.
+- Detect and analyze humans from visual input.
+- Perform facial and human-body feature detection.
+- Explore intelligent visual monitoring for security applications.
+- Automate portions of surveillance-related visual analysis.
+- Demonstrate the integration of TensorFlow.js with computer vision.
+- Provide a foundation for future intelligent security and surveillance features.
 
-- [**Comparing Backends**](https://github.com/vladmandic/human/wiki/Backends)
-- [**Development Server**](https://github.com/vladmandic/human/wiki/Development-Server)
-- [**Build Process**](https://github.com/vladmandic/human/wiki/Build-Process)
-- [**Adding Custom Modules**](https://github.com/vladmandic/human/wiki/Module)
-- [**Performance Notes**](https://github.com/vladmandic/human/wiki/Performance)
-- [**Performance Profiling**](https://github.com/vladmandic/human/wiki/Profiling)
-- [**Platform Support**](https://github.com/vladmandic/human/wiki/Platforms)
-- [**Diagnostic and Performance trace information**](https://github.com/vladmandic/human/wiki/Diag)
-- [**Dockerize Human applications**](https://github.com/vladmandic/human/wiki/Docker)
-- [**List of Models & Credits**](https://github.com/vladmandic/human/wiki/Models)
-- [**Models Download Repository**](https://github.com/vladmandic/human-models)
-- [**Security & Privacy Policy**](https://github.com/vladmandic/human/blob/main/SECURITY.md)
-- [**License & Usage Restrictions**](https://github.com/vladmandic/human/blob/main/LICENSE)
+---
 
-<br>
+## Key Features
 
-*See [**issues**](https://github.com/vladmandic/human/issues?q=) and [**discussions**](https://github.com/vladmandic/human/discussions) for list of known limitations and planned enhancements*  
+### Face Detection
 
-*Suggestions are welcome!*  
+Detects faces from images and video input and provides facial landmark information.
 
-<hr><br>
+### Facial Analysis
 
-## App Examples
+Performs facial feature analysis using supported machine learning models.
 
-Visit [Examples gallery](https://vladmandic.github.io/human/samples/index.html) for more examples  
-[<img src="assets/samples.jpg" width="640"/>](assets/samples.jpg)
+### Emotion Analysis
 
-<br>
+Analyzes facial information to estimate supported emotional expressions.
 
-## Options
+### Iris and Eye Analysis
 
-All options as presented in the demo application...  
-[demo/index.html](demo/index.html)  
-[<img src="assets/screenshot-menu.png"/>](assets/screenshot-menu.png)
+Processes eye and iris-related information for detailed facial analysis and related applications.
 
-<br>
+### Hand Detection and Tracking
 
-**Results Browser:**  
-[ *Demo -> Display -> Show Results* ]<br>
-[<img src="assets/screenshot-results.png"/>](assets/screenshot-results.png)
+Detects hands and provides hand and finger landmark information.
 
-<br>
+### Body Pose Detection
 
-## Advanced Examples
+Detects and tracks human body landmarks and pose information.
 
-1. **Face Similarity Matching:**  
-Extracts all faces from provided input images,  
-sorts them by similarity to selected face  
-and optionally matches detected face with database of known people to guess their names
-> [demo/facematch](demo/facematch/index.html)  
+### Gesture Analysis
 
-[<img src="assets/screenshot-facematch.jpg" width="640"/>](assets/screenshot-facematch.jpg)
+Supports gesture-related analysis using detected hand and body information.
 
-2. **Face Detect:**  
-Extracts all detect faces from loaded images on-demand and highlights face details on a selected face  
-> [demo/facedetect](demo/facedetect/index.html)  
+### Real-Time Processing
 
-[<img src="assets/screenshot-facedetect.jpg" width="640"/>](assets/screenshot-facedetect.jpg)
+Supports processing of images, videos, and webcam input through the browser-based demonstration environment.
 
-3. **Face ID:**  
-Performs validation check on a webcam input to detect a real face and matches it to known faces stored in database
-> [demo/faceid](demo/faceid/index.html)  
+### Multiple Processing Backends
 
-[<img src="assets/screenshot-faceid.jpg" width="640"/>](assets/screenshot-faceid.jpg)
+The project can use TensorFlow.js processing backends such as TensorFlow, CPU, WASM, WebGL, and WebGPU depending on the execution environment and configuration.
 
-<br>
+---
 
-4. **3D Rendering:**  
-> [human-motion](https://github.com/vladmandic/human-motion)
+## Technologies Used
 
-[<img src="https://github.com/vladmandic/human-motion/raw/main/assets/screenshot-face.jpg" width="640"/>](https://github.com/vladmandic/human-motion/raw/main/assets/screenshot-face.jpg)
-[<img src="https://github.com/vladmandic/human-motion/raw/main/assets/screenshot-body.jpg" width="640"/>](https://github.com/vladmandic/human-motion/raw/main/assets/screenshot-body.jpg)
-[<img src="https://github.com/vladmandic/human-motion/raw/main/assets/screenshot-hand.jpg" width="640"/>](https://github.com/vladmandic/human-motion/raw/main/assets/screenshot-hand.jpg)
+| Technology | Purpose |
+|------------|---------|
+| JavaScript | Application logic |
+| TypeScript | Source development |
+| Node.js | Server-side execution |
+| TensorFlow.js | Machine learning inference |
+| @tensorflow/tfjs-node | Native TensorFlow backend for Node.js |
+| Human | Computer vision and human analysis |
+| WebGL | Browser-based GPU processing |
+| WebGPU | Browser-based GPU processing |
+| WebAssembly | Browser-side accelerated processing |
+| HTML | Web interface |
+| CSS | User interface styling |
+| Git | Version control |
+| GitHub | Source code hosting and collaboration |
 
-<br>
+---
 
-5. **VR Model Tracking:**  
-> [human-three-vrm](https://github.com/vladmandic/human-three-vrm)  
-> [human-bjs-vrm](https://github.com/vladmandic/human-bjs-vrm)  
+## Project Architecture
 
-[<img src="https://github.com/vladmandic/human-three-vrm/raw/main/assets/human-vrm-screenshot.jpg" width="640"/>](https://github.com/vladmandic/human-three-vrm/raw/main/assets/human-vrm-screenshot.jpg)
-
-
-6. **Human as OS native application:**
-> [human-electron](https://github.com/vladmandic/human-electron)
-
-<br>
-
-**468-Point Face Mesh Defails:**  
-(view in full resolution to see keypoints)  
-
-[<img src="assets/facemesh.png" width="400"/>](assets/facemesh.png)
-
-<br><hr><br>
-
-## Quick Start
-
-Simply load `Human` (*IIFE version*) directly from a cloud CDN in your HTML file:  
-(pick one: `jsdelirv`, `unpkg` or `cdnjs`)
-
-```html
-<!DOCTYPE HTML>
-<script src="https://cdn.jsdelivr.net/npm/@vladmandic/human/dist/human.js"></script>
-<script src="https://unpkg.dev/@vladmandic/human/dist/human.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/human/3.0.0/human.js"></script>
+```text
+The-next-gen-serveillance-enhancing-security-through-intelligent-detection/
+│
+├── demo/
+│   ├── nodejs/
+│   ├── typescript/
+│   ├── faceid/
+│   └── tracker/
+│
+├── models/
+│   └── Machine learning model files
+│
+├── src/
+│   └── Core source code
+│
+├── tfjs/
+│   └── TensorFlow.js integration
+│
+├── test/
+│   └── Testing resources
+│
+├── .build.json
+├── package.json
+├── tsconfig.json
+└── README.md
+````
+
+---
+
+## Working Principle
+
+The system follows a computer vision and machine learning based processing pipeline.
+
+```text
+Camera / Image / Video
+          |
+          v
+     Input Processing
+          |
+          v
+    Human Framework
+          |
+          v
+     TensorFlow.js
+          |
+          v
+     Model Inference
+          |
+          v
+ Human / Face / Body Analysis
+          |
+          v
+    Detection Results
+          |
+          v
+ Surveillance / Security Application
 ```
 
-For details, including how to use `Browser ESM` version or `NodeJS` version of `Human`, see [**Installation**](https://github.com/vladmandic/human/wiki/Install)
+### Step-by-Step Process
 
-<br>
+1. The system receives input from a webcam, image, or video source.
+2. The input is processed and prepared for model inference.
+3. The Human computer vision framework manages the detection pipeline.
+4. TensorFlow.js performs machine learning inference using the selected backend.
+5. Relevant models analyze the visual input.
+6. Detection results are generated for supported human-related features.
+7. The results can be used as the foundation for intelligent surveillance and security applications.
 
-## Code Examples
+---
 
-Simple app that uses Human to process video input and  
-draw output on screen using internal draw helper functions
+## Models
 
-```js
-// create instance of human with simple configuration using default values
-const config = { backend: 'webgl' };
-const human = new Human.Human(config);
-// select input HTMLVideoElement and output HTMLCanvasElement from page
-const inputVideo = document.getElementById('video-id');
-const outputCanvas = document.getElementById('canvas-id');
+The project uses machine learning models available through the Human framework.
 
-function detectVideo() {
-  // perform processing using default configuration
-  human.detect(inputVideo).then((result) => {
-    // result object will contain detected details
-    // as well as the processed canvas itself
-    // so lets first draw processed frame on canvas
-    human.draw.canvas(result.canvas, outputCanvas);
-    // then draw results on the same canvas
-    human.draw.face(outputCanvas, result.face);
-    human.draw.body(outputCanvas, result.body);
-    human.draw.hand(outputCanvas, result.hand);
-    human.draw.gesture(outputCanvas, result.gesture);
-    // and loop immediate to the next frame
-    requestAnimationFrame(detectVideo);
-    return result;
-  });
-}
+Depending on the selected configuration, supported models can perform tasks such as:
 
-detectVideo();
+* Face detection
+* Facial landmark detection
+* Face description and recognition-related analysis
+* Emotion analysis
+* Iris detection
+* Hand and finger landmark detection
+* Body pose estimation
+* Object and human detection
+* Gesture-related analysis
+
+The models are located within the project's model resources and are loaded according to the selected configuration.
+
+---
+
+## Requirements
+
+Before running the project, install the following:
+
+* Node.js
+* npm
+* Git
+* A modern web browser such as Google Chrome
+
+For Node.js execution using the native TensorFlow.js backend on Windows, a compatible C++ build environment may be required when a compatible prebuilt TensorFlow.js binary is unavailable.
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Karthisha-sriram/The-next-gen-serveillance-enhancing-security-through-intelligent-detection.git
 ```
 
-or using `async/await`:
+### 2. Move into the Project Directory
 
-```js
-// create instance of human with simple configuration using default values
-const config = { backend: 'webgl' };
-const human = new Human(config); // create instance of Human
-const inputVideo = document.getElementById('video-id');
-const outputCanvas = document.getElementById('canvas-id');
-
-async function detectVideo() {
-  const result = await human.detect(inputVideo); // run detection
-  human.draw.all(outputCanvas, result); // draw all results
-  requestAnimationFrame(detectVideo); // run loop
-}
-
-detectVideo(); // start loop
+```bash
+cd The-next-gen-serveillance-enhancing-security-through-intelligent-detection
 ```
 
-or using `Events`:
+### 3. Install Dependencies
 
-```js
-// create instance of human with simple configuration using default values
-const config = { backend: 'webgl' };
-const human = new Human(config); // create instance of Human
-const inputVideo = document.getElementById('video-id');
-const outputCanvas = document.getElementById('canvas-id');
-
-human.events.addEventListener('detect', () => { // event gets triggered when detect is complete
-  human.draw.all(outputCanvas, human.result); // draw all results
-});
-
-function detectVideo() {
-  human.detect(inputVideo) // run detection
-    .then(() => requestAnimationFrame(detectVideo)); // upon detect complete start processing of the next frame
-}
-
-detectVideo(); // start loop
+```bash
+npm install
 ```
 
-or using interpolated results for smooth video processing by separating detection and drawing loops:
+---
 
-```js
-const human = new Human(); // create instance of Human
-const inputVideo = document.getElementById('video-id');
-const outputCanvas = document.getElementById('canvas-id');
-let result;
+## Running the Project
 
-async function detectVideo() {
-  result = await human.detect(inputVideo); // run detection
-  requestAnimationFrame(detectVideo); // run detect loop
-}
+### Node.js Demo
 
-async function drawVideo() {
-  if (result) { // check if result is available
-    const interpolated = human.next(result); // get smoothened result using last-known results
-    human.draw.all(outputCanvas, interpolated); // draw the frame
-  }
-  requestAnimationFrame(drawVideo); // run draw loop
-}
+To execute the Node.js demonstration:
 
-detectVideo(); // start detection loop
-drawVideo(); // start draw loop
+```bash
+npm start
 ```
 
-or same, but using built-in full video processing instead of running manual frame-by-frame loop:
+The Node.js demonstration initializes the Human framework, loads the required models, and performs processing using the TensorFlow.js Node backend.
 
-```js
-const human = new Human(); // create instance of Human
-const inputVideo = document.getElementById('video-id');
-const outputCanvas = document.getElementById('canvas-id');
+### Browser and Webcam Demo
 
-async function drawResults() {
-  const interpolated = human.next(); // get smoothened result using last-known results
-  human.draw.all(outputCanvas, interpolated); // draw the frame
-  requestAnimationFrame(drawResults); // run draw loop
-}
+To start the local browser demonstration server:
 
-human.video(inputVideo); // start detection loop which continously updates results
-drawResults(); // start draw loop
+```cmd
+node_modules\.bin\build.cmd --profile serve
 ```
 
-or using built-in webcam helper methods that take care of video handling completely:
+The project configuration uses:
 
-```js
-const human = new Human(); // create instance of Human
-const outputCanvas = document.getElementById('canvas-id');
-
-async function drawResults() {
-  const interpolated = human.next(); // get smoothened result using last-known results
-  human.draw.canvas(outputCanvas, human.webcam.element); // draw current webcam frame
-  human.draw.all(outputCanvas, interpolated); // draw the frame detectgion results
-  requestAnimationFrame(drawResults); // run draw loop
-}
-
-await human.webcam.start({ crop: true });
-human.video(human.webcam.element); // start detection loop which continously updates results
-drawResults(); // start draw loop
+```text
+HTTP Port: 8000
+HTTPS Port: 8001
 ```
 
-And for even better results, you can run detection in a separate web worker thread
+After the server starts, open the local URL displayed in the terminal.
 
-<br><hr><br>
+The typical HTTP address is:
 
-## Inputs
+```text
+http://localhost:8000
+```
 
-`Human` library can process all known input types:  
+The browser demonstration can be used with supported image, video, and webcam input.
 
-- `Image`, `ImageData`, `ImageBitmap`, `Canvas`, `OffscreenCanvas`, `Tensor`,  
-- `HTMLImageElement`, `HTMLCanvasElement`, `HTMLVideoElement`, `HTMLMediaElement`
+---
 
-Additionally, `HTMLVideoElement`, `HTMLMediaElement` can be a standard `<video>` tag that links to:
+## Development Commands
 
-- WebCam on user's system
-- Any supported video type  
-  e.g. `.mp4`, `.avi`, etc.
-- Additional video types supported via *HTML5 Media Source Extensions*  
-  e.g.: **HLS** (*HTTP Live Streaming*) using `hls.js` or **DASH** (*Dynamic Adaptive Streaming over HTTP*) using `dash.js`
-- **WebRTC** media track using built-in support  
+### Run the Node.js Demo
 
-<br><hr><br>
+```bash
+npm start
+```
 
-## Detailed Usage
+### Run the Development Profile
 
-- [**Wiki Home**](https://github.com/vladmandic/human/wiki)
-- [**List of all available methods, properies and namespaces**](https://github.com/vladmandic/human/wiki/Usage)
-- [**TypeDoc API Specification - Main class**](https://vladmandic.github.io/human/typedoc/classes/Human.html)
-- [**TypeDoc API Specification - Full**](https://vladmandic.github.io/human/typedoc/)
+```bash
+npm run dev
+```
 
-    ![typedoc](assets/screenshot-typedoc.png)
+### Run Tests
 
-<br><hr><br>
+```bash
+npm test
+```
 
-## TypeDefs
+### Run Linting
 
-`Human` is written using TypeScript strong typing and ships with full **TypeDefs** for all classes defined by the library bundled in `types/human.d.ts` and enabled by default  
+```bash
+npm run lint
+```
 
-*Note*: This does not include embedded `tfjs`  
-If you want to use embedded `tfjs` inside `Human` (`human.tf` namespace) and still full **typedefs**, add this code:
+### Build the Project
 
-> import type * as tfjs from '@vladmandic/human/dist/tfjs.esm';  
-> const tf = human.tf as typeof tfjs;
+```bash
+npm run build
+```
 
-This is not enabled by default as `Human` does not ship with full **TFJS TypeDefs** due to size considerations  
-Enabling `tfjs` TypeDefs as above creates additional project (dev-only as only types are required) dependencies as defined in `@vladmandic/human/dist/tfjs.esm.d.ts`:
+---
 
-> @tensorflow/tfjs-core, @tensorflow/tfjs-converter, @tensorflow/tfjs-backend-wasm, @tensorflow/tfjs-backend-webgl
+## Browser Demo
 
+The browser demonstration provides a way to interact with the computer vision capabilities through a web interface.
 
-<br><hr><br>
+Typical usage includes:
 
-## Default models
+```text
+Webcam / Image / Video
+        |
+        v
+Browser Interface
+        |
+        v
+Human + TensorFlow.js
+        |
+        v
+Real-Time Detection
+        |
+        v
+Visualized Results
+```
 
-Default models in Human library are:
+The local browser server can be launched with:
 
-- **Face Detection**: *MediaPipe BlazeFace Back variation*
-- **Face Mesh**: *MediaPipe FaceMesh*
-- **Face Iris Analysis**: *MediaPipe Iris*
-- **Face Description**: *HSE FaceRes*
-- **Emotion Detection**: *Oarriaga Emotion*
-- **Body Analysis**: *MoveNet Lightning variation*
-- **Hand Analysis**: *HandTrack & MediaPipe HandLandmarks*
-- **Body Segmentation**: *Google Selfie*
-- **Object Detection**: *CenterNet with MobileNet v3*
+```cmd
+node_modules\.bin\build.cmd --profile serve
+```
 
-Note that alternative models are provided and can be enabled via configuration  
-For example, body pose detection by default uses *MoveNet Lightning*, but can be switched to *MultiNet Thunder* for higher precision or *Multinet MultiPose* for multi-person detection or even *PoseNet*, *BlazePose* or *EfficientPose* depending on the use case  
+Then open:
 
-For more info, see [**Configuration Details**](https://github.com/vladmandic/human/wiki/Configuration) and [**List of Models**](https://github.com/vladmandic/human/wiki/Models)
+```text
+http://localhost:8000
+```
 
-<br><hr><br>
+in a modern browser.
 
-## Diagnostics
+---
 
-- [How to get diagnostic information or performance trace information](https://github.com/vladmandic/human/wiki/Diag)
+## Screenshots
 
-<br><hr><br>
+Add screenshots captured from the team's own implementation.
 
-`Human` library is written in [TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html) **5.1** using [TensorFlow/JS](https://www.tensorflow.org/js/) **4.10** and conforming to latest `JavaScript` [ECMAScript version 2022](https://262.ecma-international.org/) standard  
+### Face Detection
 
-Build target for distributables is `JavaScript` [EMCAScript version 2018](https://262.ecma-international.org/9.0/)  
+```markdown
+![Face Detection](assets/screenshots/face-detection.png)
+```
 
-<br>
+### Human Detection
 
-For details see [**Wiki Pages**](https://github.com/vladmandic/human/wiki)  
-and [**API Specification**](https://vladmandic.github.io/human/typedoc/classes/Human.html)
+```markdown
+![Human Detection](assets/screenshots/human-detection.png)
+```
 
-<br>
+### Pose Detection
 
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/vladmandic)
-![Stars](https://img.shields.io/github/stars/vladmandic/human?style=flat-square&svg=true)
-![Forks](https://badgen.net/github/forks/vladmandic/human)
-![Code Size](https://img.shields.io/github/languages/code-size/vladmandic/human?style=flat-square&svg=true)
-![CDN](https://data.jsdelivr.com/v1/package/npm/@vladmandic/human/badge)<br>
-![Downloads](https://img.shields.io/npm/dw/@vladmandic/human.png?style=flat-square)
-![Downloads](https://img.shields.io/npm/dm/@vladmandic/human.png?style=flat-square)
-![Downloads](https://img.shields.io/npm/dy/@vladmandic/human.png?style=flat-square)
+```markdown
+![Pose Detection](assets/screenshots/pose-detection.png)
+```
+
+### Surveillance Interface
+
+```markdown
+![Surveillance Interface](assets/screenshots/surveillance-interface.png)
+```
+
+Replace the example image paths with screenshots from the actual project.
+
+---
+
+## Applications
+
+The project can serve as a foundation for intelligent surveillance and security applications such as:
+
+* Real-time human monitoring
+* Automated visual analysis
+* Face-based identification workflows
+* Human activity analysis
+* Security camera assistance
+* Restricted-area monitoring
+* Automated event detection
+* Intelligent surveillance systems
+
+The actual capabilities of the final application depend on the models, configuration, and additional application logic implemented by the project team.
+
+---
+
+## Future Enhancements
+
+Possible future improvements include:
+
+* Real-time person identification
+* Unknown-person detection and alerts
+* Suspicious-activity analysis
+* Restricted-zone monitoring
+* Automated security notifications
+* Event logging and incident history
+* Multi-camera support
+* Surveillance monitoring dashboard
+* Database integration
+* Cloud deployment
+* Role-based access control
+* Edge-device optimization
+* Real-time alert generation
+* Centralized monitoring and reporting
+
+---
+
+## Testing
+
+The project includes testing resources and can be tested using:
+
+```bash
+npm test
+```
+
+Linting can be performed using:
+
+```bash
+npm run lint
+```
+
+Build-related tasks can be performed using:
+
+```bash
+npm run build
+```
+
+---
+
+## Team
+
+This project is developed as a team project under the title:
+
+**The Next-Gen Surveillance: Enhancing Security Through Intelligent Detection**
+
+### Team Members
+
+Add the team members and their responsibilities below:
+
+```text
+1. Name - Role / Contribution
+2. Name - Role / Contribution
+3. Name - Role / Contribution
+4. Name - Role / Contribution
+```
+
+---
+
+## Open-Source Attribution
+
+This project uses and builds upon the open-source Human computer vision framework developed by Vladimir Mandic.
+
+Original Human project:
+
+[https://github.com/vladmandic/human](https://github.com/vladmandic/human)
+
+The Human framework provides the underlying computer vision and machine learning functionality used by this project, including face, body, hand, iris, emotion, and related analysis capabilities.
+
+This repository represents a project built using the Human framework and its associated technologies. It is not the original Human library.
+
+---
+
+## Third-Party Technologies
+
+This project relies on several open-source technologies and libraries, including:
+
+* Human
+* TensorFlow.js
+* Node.js
+* TypeScript
+* WebGL
+* WebGPU
+* WebAssembly
+
+Refer to the respective project documentation and license files for additional information.
+
+---
+
+## License
+
+This project incorporates the Human open-source framework and other third-party dependencies.
+
+Refer to the included license files and the respective licenses of third-party dependencies for applicable licensing terms.
+
+---
+
+## Repository
+
+GitHub Repository:
+
+[https://github.com/Karthisha-sriram/The-next-gen-serveillance-enhancing-security-through-intelligent-detection](https://github.com/Karthisha-sriram/The-next-gen-serveillance-enhancing-security-through-intelligent-detection)
+
+---
+
+## Acknowledgements
+
+This project acknowledges the open-source developers and communities behind the technologies used in the project.
+
+Special acknowledgement is given to the Human computer vision framework and TensorFlow.js for providing the underlying technologies used for human detection and machine learning inference.
+
+---
+
+## Disclaimer
+
+This project is intended for academic, educational, and experimental purposes.
+
+Computer vision and machine learning predictions may not always be accurate. Any real-world surveillance or security deployment should consider privacy, consent, fairness, security, applicable laws, and the limitations of automated detection systems.
+
+```
+```
