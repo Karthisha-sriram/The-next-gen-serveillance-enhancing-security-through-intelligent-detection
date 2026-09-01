@@ -32,6 +32,7 @@ import jsonView from './helpers/jsonview.js';
 let human;
 
 let userConfig = {
+  modelBasePath: './models/',
   // face: { enabled: false },
   // body: { enabled: false },
   // hand: { enabled: false },
