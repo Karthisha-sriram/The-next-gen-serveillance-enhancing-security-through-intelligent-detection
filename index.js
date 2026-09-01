@@ -129,7 +129,7 @@ const ui = {
 const pwa = {
   enabled: true,
   cacheName: 'Human',
-  scriptFile: 'demo/index-pwa.js',
+  scriptFile: 'index-pwa.js',
   cacheModels: true,
   cacheWASM: true,
   cacheOther: false,
