@@ -423,16 +423,6 @@ This project is developed as a team project under the title:
 
 **The Next-Gen Surveillance: Enhancing Security Through Intelligent Detection**
 
-### Team Members
-
-Add the team members and their responsibilities below:
-
-```text
-1. Name - Role / Contribution
-2. Name - Role / Contribution
-3. Name - Role / Contribution
-4. Name - Role / Contribution
-```
 
 ## Third-Party Technologies
 
