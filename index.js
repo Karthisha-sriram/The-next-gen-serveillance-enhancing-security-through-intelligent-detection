@@ -129,7 +129,7 @@ const ui = {
 const pwa = {
   enabled: true,
   cacheName: 'Human',
-  scriptFile: 'index-pwa.js',
+  scriptFile: 'demo/index-pwa.js',
   cacheModels: true,
   cacheWASM: true,
   cacheOther: false,
@@ -369,10 +369,10 @@ async function setupCamera() {
     audio: false,
     video: {
       facingMode: ui.facing ? 'user' : 'environment',
-      resizeMode: ui.crop ? 'crop-and-scale' : 'none',
+      resizeMode: 'none',
       width: { ideal: document.body.clientWidth },
       // height: { ideal: document.body.clientHeight }, // not set as we're using aspectRation to get height instead
-      aspectRatio: document.body.clientWidth / document.body.clientHeight,
+      // aspectRatio disabled to prevent webcam cropping
       // deviceId: 'xxxx' // if you have multiple webcams, specify one to use explicitly
     },
   };
@@ -412,7 +412,7 @@ async function setupCamera() {
   const ready = new Promise((resolve) => { (video.onloadeddata = () => resolve(true)); });
   video.srcObject = stream;
   await ready;
-  canvas.style.width = '100vw';
+  video.style.display = 'block'; video.style.width = '100vw'; video.style.height = 'auto'; canvas.style.width = '100vw';
   canvas.style.height = 'auto';
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
