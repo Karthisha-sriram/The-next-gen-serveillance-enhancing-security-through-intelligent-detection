@@ -122,7 +122,7 @@ const ui = {
   webRTCStream: 'reowhite',
 
   // sample images
-  compare: '../samples/ai-face.jpg', // base image for face compare
+  compare: 'samples/ai-face.jpg', // base image for face compare
   samples: [],
 };
 
@@ -412,8 +412,8 @@ async function setupCamera() {
   const ready = new Promise((resolve) => { (video.onloadeddata = () => resolve(true)); });
   video.srcObject = stream;
   await ready;
-  if (settings.width > settings.height) canvas.style.width = '100vw';
-  else canvas.style.height = '100vh';
+  canvas.style.width = '100vw';
+  canvas.style.height = 'auto';
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   ui.menuWidth.input.setAttribute('value', video.videoWidth);
